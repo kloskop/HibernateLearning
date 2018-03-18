@@ -25,22 +25,24 @@ public class Main {
 	}
 
 	public void addNewData() {
-//		Transaction transaction = session.beginTransaction();
-//		Student student1 = new Student(8, "Szymon", "Gasior", "111111");
-//		session.save(student1);
-//		transaction.commit();
+		// Transaction transaction = session.beginTransaction();
+		// Student student1 = new Student(8, "Szymon", "Gasior", "111111");
+		// session.save(student1);
+		// transaction.commit();
 
 		Set<Student> listOfStudents = new HashSet<Student>();
-		listOfStudents.add(new Student(8, "Szymon", "Gasior", "111111"));
-		listOfStudents.add(new Student(9, "Pawel", "Klosko", "111111"));
-		listOfStudents.add(new Student(10, "Drzon", "Jahn", "111111"));
+		listOfStudents.add(new Student("Jozek1", "Gasior", "111111"));
+		listOfStudents.add(new Student("Jozek2", "Klosko", "111111"));
+		listOfStudents.add(new Student("Jozek3", "Jahn", "111111"));
 
-		SchoolClass schoolClass = new SchoolClass(4, 2017, 2018, "mwo", listOfStudents);
+		SchoolClass schoolClass = new SchoolClass(2017, 2018, "eti", listOfStudents);
 		Set<SchoolClass> listOfClasses = new HashSet<SchoolClass>();
 		listOfClasses.add(schoolClass);
 
-		School newSchool = new School(3, "UP", "ulica", listOfClasses);
-		session.saveOrUpdate(newSchool);  //jak samo session.save(newSchool) to nie mozna nadpisywac tych samych elementów
+		School newSchool = new School("UEK", "ulica ueku", listOfClasses);
+		session.saveOrUpdate(newSchool); // jak samo session.save(newSchool) to
+											// nie mozna nadpisywac tych samych
+											// elementów
 		Transaction transaction = session.beginTransaction();
 		transaction.commit();
 	}

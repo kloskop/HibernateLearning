@@ -5,6 +5,7 @@
 	<class name="School" table="schools">
 		<id name="id" column="id" type="long">
 			<!-- generator class="native"></generator-->
+			<generator class="native"></generator>
 		</id>
 
 		<set name="classes" cascade="all">

@@ -14,6 +14,13 @@ public class Student {
 		this.pesel = pesel;
 	}
 
+	public Student(String name, String surname, String pesel) {
+		super();
+		this.name = name;
+		this.surname = surname;
+		this.pesel = pesel;
+	}
+
 	public Student() {
 
 	}

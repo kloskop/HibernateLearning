@@ -4,7 +4,8 @@
 <hibernate-mapping>
 	<class name="SchoolClass" table="schoolClasses">
 		<id name="id" column="id" type="long">
-			<!-- generator class="native"></generator-->
+			<!-- generator class="native"></generator -->
+			<generator class="native"></generator>
 		</id>
 
 		<set name="students" cascade="all">

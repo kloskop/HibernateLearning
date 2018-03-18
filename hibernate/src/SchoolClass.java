@@ -21,6 +21,14 @@ public class SchoolClass implements java.io.Serializable {
 		this.students = students;
 	}
 
+	public SchoolClass(int startYear, int currentYear, String profile, Set<Student> students) {
+		super();
+		this.startYear = startYear;
+		this.currentYear = currentYear;
+		this.profile = profile;
+		this.students = students;
+	}
+
 	public SchoolClass() {
 
 	}
