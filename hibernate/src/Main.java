@@ -31,21 +31,25 @@ public class Main {
 	}
 
 	private void printSchools() {
-		// Criteria crit = session.createCriteria(School.class);
-		// List<School> schools = crit.list();
-		//
-		// System.out.println("### Schools and classes");
-		// for (School s : schools) {
-		// System.out.println(s);
-		// }
-
-		Criteria crit = session.createCriteria(SchoolClass.class);
-		List<SchoolClass> schools = crit.list();
+		Criteria crit = session.createCriteria(School.class);
+		List<School> schools = crit.list();
 
 		System.out.println("### Schools and classes");
-		for (SchoolClass s : schools) {
+		for (School s : schools) {
 			System.out.println(s);
+			System.out.println("    Klasy: ");
+			for (SchoolClass schoolClass : s.getClasses()) {
+				System.out.println("    " + schoolClass);
+			}
 		}
+
+		// Criteria crit = session.createCriteria(SchoolClass.class);
+		// List<SchoolClass> schools = crit.list();
+		//
+		// System.out.println("### Schools and classes");
+		// for (SchoolClass s : schools) {
+		// System.out.println(s);
+		// }
 
 	}
 

@@ -1,9 +1,12 @@
+import java.util.Set;
+
 @SuppressWarnings("serial")
 public class School implements java.io.Serializable {
 
 	private long id;
 	private String name;
 	private String address;
+	private Set<SchoolClass> classes;
 
 	public School() {
 	}
@@ -32,8 +35,17 @@ public class School implements java.io.Serializable {
 		this.address = address;
 	}
 	
+
+	public Set<SchoolClass> getClasses() {
+		return classes;
+	}
+
+	public void setClasses(Set<SchoolClass> classes) {
+		this.classes = classes;
+	}
+
 	public String toString() {
 		return "School: " + getName() + " (" + getAddress() + ")";
-}
+	}
 
 }
