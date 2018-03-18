@@ -11,6 +11,14 @@ public class School implements java.io.Serializable {
 	public School() {
 	}
 
+	public School(long id, String name, String address, Set<SchoolClass> classes) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.address = address;
+		this.classes = classes;
+	}
+
 	public long getId() {
 		return id;
 	}
@@ -34,7 +42,6 @@ public class School implements java.io.Serializable {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
 
 	public Set<SchoolClass> getClasses() {
 		return classes;

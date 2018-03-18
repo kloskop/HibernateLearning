@@ -12,6 +12,19 @@ public class SchoolClass implements java.io.Serializable {
 		return id;
 	}
 
+	public SchoolClass(long id, int startYear, int currentYear, String profile, Set<Student> students) {
+		super();
+		this.id = id;
+		this.startYear = startYear;
+		this.currentYear = currentYear;
+		this.profile = profile;
+		this.students = students;
+	}
+
+	public SchoolClass() {
+
+	}
+
 	public void setId(long id) {
 		this.id = id;
 	}

@@ -4,7 +4,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.hibernate.Criteria;
 import org.hibernate.Query;
@@ -17,8 +19,30 @@ public class Main {
 
 	public static void main(String[] args) {
 		Main main = new Main();
+		main.addNewData();
 		main.printSchools();
 		main.close();
+	}
+
+	public void addNewData() {
+//		Transaction transaction = session.beginTransaction();
+//		Student student1 = new Student(8, "Szymon", "Gasior", "111111");
+//		session.save(student1);
+//		transaction.commit();
+
+		Set<Student> listOfStudents = new HashSet<Student>();
+		listOfStudents.add(new Student(8, "Szymon", "Gasior", "111111"));
+		listOfStudents.add(new Student(9, "Pawel", "Klosko", "111111"));
+		listOfStudents.add(new Student(10, "Drzon", "Jahn", "111111"));
+
+		SchoolClass schoolClass = new SchoolClass(4, 2017, 2018, "mwo", listOfStudents);
+		Set<SchoolClass> listOfClasses = new HashSet<SchoolClass>();
+		listOfClasses.add(schoolClass);
+
+		School newSchool = new School(3, "UP", "ulica", listOfClasses);
+		session.saveOrUpdate(newSchool);  //jak samo session.save(newSchool) to nie mozna nadpisywac tych samych elementów
+		Transaction transaction = session.beginTransaction();
+		transaction.commit();
 	}
 
 	public Main() {

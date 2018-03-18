@@ -6,6 +6,18 @@ public class Student {
 	private String surname;
 	private String pesel;
 
+	public Student(long id, String name, String surname, String pesel) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.surname = surname;
+		this.pesel = pesel;
+	}
+
+	public Student() {
+
+	}
+
 	public long getId() {
 		return id;
 	}
@@ -42,8 +54,5 @@ public class Student {
 	public String toString() {
 		return "Students [id=" + id + ", name=" + name + ", surname=" + surname + ", pesel=" + pesel + "]";
 	}
-	
-	
-	
 
 }
