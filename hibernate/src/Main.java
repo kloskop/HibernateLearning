@@ -40,6 +40,10 @@ public class Main {
 			System.out.println("    Klasy: ");
 			for (SchoolClass schoolClass : s.getClasses()) {
 				System.out.println("    " + schoolClass);
+				System.out.println("        Studenci: ");
+				for (Student student : schoolClass.getStudents()) {
+					System.out.println("                  " + student);
+				}
 			}
 		}
 

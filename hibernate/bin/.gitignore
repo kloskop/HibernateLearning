@@ -1,2 +1,5 @@
-/SchoolClass.xml
-/SchoolClass.hbm.xml
+/Students.class
+/Snippet.class
+/Students.hbm.xml
+/Student.hbm.xml
+/Student.class
