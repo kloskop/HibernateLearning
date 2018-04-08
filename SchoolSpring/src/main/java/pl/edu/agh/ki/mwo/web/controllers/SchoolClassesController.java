@@ -51,20 +51,18 @@ public class SchoolClassesController {
 
 		return "schoolClassesList";
 	}
-	//
-	// @RequestMapping(value = "/DeleteSchool", method = RequestMethod.POST)
-	// public String deleteSchool(@RequestParam(value = "schoolId", required =
-	// false) String schoolId, Model model,
-	// HttpSession session) {
-	// if (session.getAttribute("userLogin") == null)
-	// return "redirect:/Login";
-	//
-	// DatabaseConnector.getInstance().deleteSchool(schoolId);
-	// model.addAttribute("schools",
-	// DatabaseConnector.getInstance().getSchools());
-	// model.addAttribute("message", "Szkoła została usunięta");
-	//
-	// return "schoolsList";
-	// }
+
+	@RequestMapping(value = "/DeleteSchoolClasses", method = RequestMethod.POST)
+	public String deleteSchool(@RequestParam(value = "schoolClassId", required = false) String schoolClassId,
+			Model model, HttpSession session) {
+		if (session.getAttribute("userLogin") == null)
+			return "redirect:/Login";
+
+		DatabaseConnector.getInstance().deleteSchoolClass(schoolClassId);
+		model.addAttribute("schoolsClasses", DatabaseConnector.getInstance().getSchoolsClasses());
+		model.addAttribute("message", "Szkoła została usunięta");
+
+		return "schoolClassesList";
+	}
 
 }
