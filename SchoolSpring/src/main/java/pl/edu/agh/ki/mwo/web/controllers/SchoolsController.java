@@ -19,8 +19,7 @@ public class SchoolsController {
     	if (session.getAttribute("userLogin") == null)
     		return "redirect:/Login";
 
-    	model.addAttribute("schools", DatabaseConnector.getInstance().getSchools());
-    	
+    	model.addAttribute("schools", DatabaseConnector.getInstance().getSchools());	
         return "schoolsList";    
     }
     
@@ -33,6 +32,10 @@ public class SchoolsController {
     	
         return "schoolForm";    
     }
+    
+    
+
+    
 
     @RequestMapping(value="/CreateSchool", method=RequestMethod.POST)
     public String createSchool(@RequestParam(value="schoolName", required=false) String name,

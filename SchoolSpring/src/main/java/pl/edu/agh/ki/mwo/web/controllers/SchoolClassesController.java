@@ -36,6 +36,7 @@ public class SchoolClassesController {
 	@RequestMapping(value = "/CreateSchoolClass", method = RequestMethod.POST)
 	public String createSchool(@RequestParam(value = "schoolClassStartYear", required = false) int schoolClassStartYear,
 			@RequestParam(value = "schoolClassProfile", required = false) String schoolClassProfile, Model model,
+			@RequestParam(value = "schoolClassStartYear", required = false) int schoolClassCurrentYear,
 			HttpSession session) {
 		if (session.getAttribute("userLogin") == null)
 			return "redirect:/Login";
@@ -43,7 +44,7 @@ public class SchoolClassesController {
 		SchoolClass schoolClass = new SchoolClass();
 		schoolClass.setStartYear(schoolClassStartYear);
 		schoolClass.setProfile(schoolClassProfile);
-		;
+		schoolClass.setCurrentYear(schoolClassCurrentYear);
 
 		DatabaseConnector.getInstance().addSchoolClass(schoolClass);
 		model.addAttribute("schoolsClasses", DatabaseConnector.getInstance().getSchoolsClasses());

@@ -11,7 +11,7 @@
     	<div th:include="menuFragment" ></div>
 		<br/><Br/>
 		<table border="1" cellpadding="5">
-			<tr><th>Id</th><th>Nazwa</th><th>Adres</th><th>Akcje</th></tr>
+			<tr><th>Id</th><th>Start year</th><th>Current year</th><th>Profile</th><th>Akcje</th></tr>
 			<tr th:each="schoolClass: ${schoolsClasses}">
 				<td><span th:text="${schoolClass.id}" /></td>
 				<td><span th:text="${schoolClass.startYear}" /></td>
